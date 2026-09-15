@@ -1,4 +1,7 @@
 .venv/
-data/
-.env
 __pycache__/
+*.pyc
+.env
+.DS_Store
+.ipynb_checkpoints/
+.pytest_cache/
