@@ -1,0 +1,235 @@
+[
+  {
+    "id": "Q01",
+    "query": "What is the purpose of the employee Code of Conduct?",
+    "type": "Direct",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-1"
+    ]
+  },
+  {
+    "id": "Q02",
+    "query": "What kind of work environment is the Company committed to providing?",
+    "type": "Direct",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-2"
+    ]
+  },
+  {
+    "id": "Q03",
+    "query": "What are the Company's expectations regarding employee dress and personal hygiene?",
+    "type": "Direct",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-2",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-3"
+    ]
+  },
+  {
+    "id": "Q04",
+    "query": "Under what conditions does the Company encourage spiritual and religious practices?",
+    "type": "Semantic",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-3"
+    ]
+  },
+  {
+    "id": "Q05",
+    "query": "What personal traits are expected from employees in addition to being cost conscious and customer oriented?",
+    "type": "Multi-point",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-4",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-5",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-6"
+    ]
+  },
+  {
+    "id": "Q06",
+    "query": "What questions should an employee ask themselves before undertaking an action at work?",
+    "type": "Multi-point",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-6",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-7"
+    ]
+  },
+  {
+    "id": "Q07",
+    "query": "What practices are encouraged to maintain professional workplace decorum?",
+    "type": "Multi-point",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-7",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-8",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-9",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-10"
+    ]
+  },
+  {
+    "id": "Q08",
+    "query": "What types of behavior are considered misconduct at the workplace?",
+    "type": "Broad retrieval",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-12",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-13",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-14",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-15",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-16",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-17"
+    ]
+  },
+  {
+    "id": "Q09",
+    "query": "Why does the Company emphasize cost consciousness?",
+    "type": "Semantic",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-17"
+    ]
+  },
+  {
+    "id": "Q10",
+    "query": "What does customer orientation mean according to the Code of Conduct?",
+    "type": "Semantic",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-17",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-18"
+    ]
+  },
+  {
+    "id": "Q11",
+    "query": "How should employees exercise financial powers assigned to them?",
+    "type": "Direct",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-18",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-19"
+    ]
+  },
+  {
+    "id": "Q12",
+    "query": "Can an employee use their financial authority to approve their own expenses?",
+    "type": "Specific",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-19"
+    ]
+  },
+  {
+    "id": "Q13",
+    "query": "What restrictions apply to employees who want to upload their resumes to job portals while employed?",
+    "type": "Specific",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-19",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-20"
+    ]
+  },
+  {
+    "id": "Q14",
+    "query": "How should employees use Company assets and resources?",
+    "type": "Semantic",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-20",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-21"
+    ]
+  },
+  {
+    "id": "Q15",
+    "query": "What are the Company's rules regarding alcohol and illegal substances at work?",
+    "type": "Direct",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-21",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-22"
+    ]
+  },
+  {
+    "id": "Q16",
+    "query": "What constitutes a conflict of interest for an employee?",
+    "type": "Semantic",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-26",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-27",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-28"
+    ]
+  },
+  {
+    "id": "Q17",
+    "query": "What should an employee do if they become aware of a possible violation of the Code of Conduct?",
+    "type": "Procedural",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-41",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-42",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-44",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-45"
+    ]
+  },
+  {
+    "id": "Q18",
+    "query": "What types of information are considered confidential and must be protected?",
+    "type": "Semantic",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-43",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-44"
+    ]
+  },
+  {
+    "id": "Q19",
+    "query": "What are the rules regarding gifts and business courtesies?",
+    "type": "Multi-point",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-31",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-32",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-33",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-34"
+    ]
+  },
+  {
+    "id": "Q20",
+    "query": "What must employees do when they become aware of a breach of the Code of Conduct?",
+    "type": "Procedural",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-41",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-42",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-44",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-45"
+    ]
+  },
+  {
+    "id": "Q21",
+    "query": "An employee discovers that a family member has a financial relationship with one of the Company's suppliers. What does the Code require the employee to do?",
+    "type": "Scenario",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-27",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-28",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-29"
+    ]
+  },
+  {
+    "id": "Q22",
+    "query": "Can an employee accept a business conference invitation paid for by a Company business partner?",
+    "type": "Scenario",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-33"
+    ]
+  },
+  {
+    "id": "Q23",
+    "query": "What should an employee do when Company rules do not explicitly address a particular financial decision?",
+    "type": "Scenario",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-19"
+    ]
+  },
+  {
+    "id": "Q24",
+    "query": "An employee has confidential information about an upcoming product development. Can they use that information when making investment decisions?",
+    "type": "Scenario",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-40",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-41"
+    ]
+  },
+  {
+    "id": "Q25",
+    "query": "If an employee becomes aware of a Code of Conduct violation, what is the required reporting timeframe?",
+    "type": "Specific",
+    "relevant_chunk_ids": [
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-44",
+      "d9b18549-45ec-469f-a045-6ef2edd1ccd4-recursive-45"
+    ]
+  }
+]
