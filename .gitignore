@@ -5,3 +5,5 @@ __pycache__/
 .DS_Store
 .ipynb_checkpoints/
 .pytest_cache/
+data/chroma_db/
+data/sparse_index.pkl
