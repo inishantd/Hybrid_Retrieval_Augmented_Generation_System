@@ -341,6 +341,7 @@ class DocumentParserRouter:
         # 12. Create validated Document
      
         document = Document(
+            id=content_hash[:16],
             page_content=sanitized_content,
             metadata=metadata,
         )
