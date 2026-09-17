@@ -84,3 +84,13 @@ def test_process_file_raises_for_empty_txt(tmp_path):
     router = DocumentParserRouter()
     with pytest.raises(ValueError):
         router.process_file(path)
+
+
+def test_same_file_gives_same_document_id(tmp_path):
+    file = tmp_path / "doc.txt"
+    file.write_text("Employees get 20 days of leave.")
+
+    first = DocumentParserRouter().process_file(file)
+    second = DocumentParserRouter().process_file(file)
+
+    assert first.id == second.id

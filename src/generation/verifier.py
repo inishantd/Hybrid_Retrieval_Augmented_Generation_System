@@ -58,6 +58,14 @@ class CitationVerifier:
         extracted_indices = sorted(
             set(int(match) for match in matches)
         )
+        if not extracted_indices:
+            return {
+                "is_valid": False,
+                "flagged_issues": {
+                    "answer": "NO_CITATIONS: Answer does not cite any context block."
+                },
+                "validated_indices": [],
+            }
 
         flagged_citations: Dict[str, str] = {}
         validated_indices: List[int] = []

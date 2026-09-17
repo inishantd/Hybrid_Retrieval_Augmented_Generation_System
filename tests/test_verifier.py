@@ -60,3 +60,10 @@ def test_mixed_valid_and_invalid_citations():
     assert result["validated_indices"] == [1]
     assert "[2]" in result["flagged_issues"]
     assert "[1]" not in result["flagged_issues"]
+
+def test_answer_without_citations_is_invalid():
+    chunks = [{"chunk": make_chunk("Employees get 20 days of leave.")}]
+    result = CitationVerifier.verify_citations("Leave policy is generous.", chunks)
+
+    assert result["is_valid"] is False
+    assert "answer" in result["flagged_issues"]
