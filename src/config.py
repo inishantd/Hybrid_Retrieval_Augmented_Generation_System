@@ -12,7 +12,7 @@ class Settings(BaseSettings):
 
 
     #Models
-    EMBEDDING_MODEL_NAME: str = "all-MiniLM-L6-v2"
+    EMBEDDING_MODEL_NAME: str = "BAAI/bge-small-en-v1.5"
     RERANKER_MODEL_NAME: str = "cross-encoder/ms-marco-MiniLM-L-6-v2"
     GENERATION_MODEL_NAME: str = "openai/gpt-oss-20b"
     JUDGE_MODEL_NAME: str = "openai/gpt-oss-20b"
