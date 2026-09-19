@@ -71,15 +71,15 @@ flowchart TB
 
 ### 1. Parsing (`src/ingestion/parsers.py`)
 
-Routes each file to a parser: `pypdf` for PDFs (page markers are kept as `[Page n]`), BeautifulSoup for HTML, plain reads for Markdown and TXT. The extracted text is then sanitized — surrogate characters and null bytes removed, PDF bullet glyphs normalised, whitespace collapsed — because raw PDF text breaks downstream validation and embeddings.
+Routes each file to a parser: `pypdf` for PDFs (page markers are kept as `[Page n]`), BeautifulSoup for HTML, plain reads for Markdown and TXT. The extracted text is then sanitized surrogate characters and null bytes removed, PDF bullet glyphs normalised, whitespace collapsed because raw PDF text breaks downstream validation and embeddings.
 
 Each document gets an ID derived from the **SHA-256 hash of its cleaned text**, which makes ingestion reproducible (see [Engineering notes](#engineering-notes)).
 
 ### 2. Chunking (`src/ingestion/chunkers.py`)
 
-Four strategies are implemented; `production_chunk()` picks one by file type — structure-aware splitting for Markdown and HTML (splits on headings, keeps small sections whole), recursive splitting for everything else.
+Four strategies are implemented; `production_chunk()` picks one by file type structure-aware splitting for Markdown and HTML (splits on headings, keeps small sections whole), recursive splitting for everything else.
 
-Recursive splitting tries progressively finer boundaries — paragraph → line → sentence → word — so a chunk rarely ends mid-sentence. Overlap from the previous chunk is prepended to keep context across boundaries.
+Recursive splitting tries progressively finer boundaries paragraph → line → sentence → word — so a chunk rarely ends mid-sentence. Overlap from the previous chunk is prepended to keep context across boundaries.
 
 ### 3. Deduplication (`src/ingestion/deduplicator.py`)
 
@@ -98,11 +98,11 @@ Both indexes are queried for twice the requested depth, then fused with Reciproc
 score(chunk) = Σ  1 / (k + rank)        k = 60
 ```
 
-RRF works on **ranks, not scores**, which avoids having to normalise BM25 scores against cosine similarities — two scales that are not comparable. A chunk found by both retrievers accumulates score from both lists and rises to the top. `k = 60` is the value from the original RRF paper (Cormack et al., 2009); it softens the gap between adjacent ranks so no single list dominates.
+RRF works on **ranks, not scores**, which avoids having to normalise BM25 scores against cosine similarities two scales that are not comparable. A chunk found by both retrievers accumulates score from both lists and rises to the top. `k = 60` is the value from the original RRF paper (Cormack et al., 2009); it softens the gap between adjacent ranks so no single list dominates.
 
 ### 6. Reranking (`src/reranking/cross_encoder.py`)
 
-A cross-encoder scores each `(query, chunk)` pair with full cross-attention, which is more accurate than comparing independent embeddings but too slow for a whole corpus — so it runs only on the fused candidates. **On this benchmark it did not improve results** (see [Results](#results)).
+A cross-encoder scores each `(query, chunk)` pair with full cross-attention, which is more accurate than comparing independent embeddings but too slow for a whole corpus so it runs only on the fused candidates. **On this benchmark it did not improve results** (see [Results](#results)).
 
 ### 7. Grounded generation (`src/generation/generator.py`)
 
@@ -269,7 +269,7 @@ Three problems worth recording, because each one changed the design.
 
 ### Deterministic chunk IDs
 
-Document IDs were originally random UUIDs, so every ingestion produced new chunk IDs for identical text. Two things broke: re-ingesting a file duplicated it in both indexes, and the evaluation — which matches ground-truth chunk IDs by string — scored **0 out of 35** on a rebuilt index even when retrieval was correct.
+Document IDs were originally random UUIDs, so every ingestion produced new chunk IDs for identical text. Two things broke: re-ingesting a file duplicated it in both indexes, and the evaluation which matches ground-truth chunk IDs by string scored **0 out of 35** on a rebuilt index even when retrieval was correct.
 
 The fix was to derive the document ID from the SHA-256 hash of its cleaned text. Same content, same ID, every time. Ingestion became idempotent and the benchmark reproducible. A regression test pins this behaviour.
 
@@ -279,7 +279,7 @@ After that fix, the labels still failed to match on another machine. The cause w
 
 ### Silent truncation in the embedding model
 
-Chunks are filled to roughly 1,500 characters, which is longer than the 256-token limit of the original embedding model (`all-MiniLM-L6-v2`). Input above the limit is discarded silently — no error, no warning — so dense retrieval only represented part of each chunk.
+Chunks are filled to roughly 1,500 characters, which is longer than the 256-token limit of the original embedding model (`all-MiniLM-L6-v2`). Input above the limit is discarded silently no error, no warning so dense retrieval only represented part of each chunk.
 
 Re-chunking would have changed every chunk ID and invalidated the labels, so the embedding model was swapped for `bge-small-en-v1.5` (512 tokens, same 384 dimensions) instead. Chunks, IDs and labels stayed identical, giving a clean comparison:
 
@@ -299,7 +299,7 @@ BM25 scores were unchanged, confirming that only the embeddings differed.
 - **Retrieval-only evaluation.** Answer faithfulness and correctness are not scored automatically.
 - **Small benchmark.** 25 questions over a single document.
 - **Chunk size is set in characters, not tokens**, so a future model change could reintroduce truncation.
-- **BM25 is rebuilt from scratch on every ingestion** and stored as a pickle — fine for hundreds of chunks, not for millions.
+- **BM25 is rebuilt from scratch on every ingestion** and stored as a pickle fine for hundreds of chunks, not for millions.
 - **No transaction across the two stores.** A failure between the BM25 save and the Chroma upsert leaves them inconsistent.
 - **No delete or update path** for documents already indexed.
 - **Text-only PDF extraction** — no tables, no OCR for scanned pages.
